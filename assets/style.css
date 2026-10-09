@@ -1,0 +1,89 @@
+@font-face { font-family: "Lilita One"; src: url("fonts/LilitaOne-Regular.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Nunito"; src: url("fonts/Nunito-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Nunito"; src: url("fonts/Nunito-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+
+:root {
+  --navy: #141e40;
+  --sky-top: #3aa0ff;
+  --sky-bottom: #9fdcff;
+  --sand: #f6dfa6;
+  --card: #fffaf0;
+  --gold: #ffc23a;
+  --green: #4ccb3a;
+  --text: #1d2440;
+  --muted: #4a5272;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-bottom) 55%, var(--sand) 100%) fixed;
+  min-height: 100vh;
+}
+a { color: #1565c0; font-weight: 700; }
+a:hover { color: #0d3c78; }
+h1, h2, h3 { font-family: "Lilita One", "Nunito", sans-serif; font-weight: 400; color: var(--navy); line-height: 1.15; letter-spacing: 0.01em; }
+h1 { font-size: 2.2rem; margin: 0 0 0.6rem; }
+h2 { font-size: 1.45rem; margin: 2rem 0 0.5rem; }
+h3 { font-size: 1.15rem; margin: 1.4rem 0 0.3rem; }
+
+.site-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  max-width: 960px; margin: 0 auto; padding: 14px 18px; }
+.site-header .brand img { height: 52px; width: auto; display: block; filter: drop-shadow(0 3px 0 rgba(20,30,64,0.35)); }
+.site-header nav { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.site-header nav a { font-family: "Lilita One", sans-serif; font-weight: 400; text-decoration: none; color: #fff;
+  background: var(--navy); border: 3px solid var(--gold); border-radius: 999px; padding: 4px 14px; font-size: 0.98rem; }
+.site-header nav a:hover, .site-header nav a[aria-current="page"] { background: #24356e; }
+
+main { max-width: 960px; margin: 0 auto; padding: 0 18px 40px; }
+.card { background: var(--card); border: 4px solid var(--navy); border-radius: 22px; box-shadow: 0 6px 0 rgba(20,30,64,0.55);
+  padding: 28px 28px 22px; margin: 18px 0; }
+.card.narrow { max-width: 760px; margin-left: auto; margin-right: auto; }
+
+.hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 26px; align-items: center; }
+.hero .logo { width: 100%; max-width: 520px; height: auto; filter: drop-shadow(0 6px 0 rgba(20,30,64,0.35)); }
+.hero .pitch { font-size: 1.2rem; color: var(--navy); }
+.hero .art { width: 100%; height: auto; border-radius: 22px; border: 4px solid var(--navy); box-shadow: 0 6px 0 rgba(20,30,64,0.55); }
+.badge img { height: 56px; width: auto; margin-top: 10px; }
+.note { color: var(--muted); font-size: 0.9rem; }
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 8px; }
+.features div { background: #fff; border: 3px solid var(--navy); border-radius: 16px; padding: 12px 14px; }
+.features b { font-family: "Lilita One", sans-serif; font-weight: 400; color: var(--navy); font-size: 1.1rem; display: block; }
+
+.doc p, .doc li { color: var(--text); }
+.doc ul { padding-left: 1.2rem; }
+.doc table { border-collapse: collapse; width: 100%; font-size: 0.95rem; margin: 0.6rem 0 1rem; }
+.doc th, .doc td { border: 2px solid #d9cfb4; padding: 8px 10px; text-align: left; vertical-align: top; }
+.doc th { background: #fff1c9; font-family: "Lilita One", sans-serif; font-weight: 400; color: var(--navy); }
+.effective { display: inline-block; background: var(--gold); color: var(--navy); border: 3px solid var(--navy);
+  border-radius: 999px; padding: 2px 14px; font-weight: 700; font-size: 0.92rem; }
+details { background: #fff; border: 3px solid var(--navy); border-radius: 14px; padding: 10px 14px; margin: 10px 0; }
+summary { cursor: pointer; font-family: "Lilita One", sans-serif; color: var(--navy); font-size: 1.08rem; }
+
+.site-footer { text-align: center; padding: 18px 18px 30px; color: var(--navy); font-size: 0.92rem; }
+.site-footer a { margin: 0 6px; }
+
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.8rem; }
+  .hero { grid-template-columns: 1fr; }
+  .features { grid-template-columns: 1fr; }
+  .card { padding: 20px 18px 16px; border-radius: 18px; }
+  .site-header { justify-content: center; }
+  .doc table, .doc thead, .doc tbody, .doc tr, .doc th, .doc td { display: block; }
+  .doc thead { display: none; }
+  .doc td { border-width: 0 0 2px; }
+  .doc tr { border: 2px solid #d9cfb4; border-radius: 10px; margin-bottom: 10px; overflow: hidden; }
+}
+@media (max-width: 720px) {
+  table.data td::before { display: block; font-family: "Lilita One", sans-serif; color: var(--navy); font-size: 0.95rem; }
+  table.data td:nth-child(1)::before { content: "What"; }
+  table.data td:nth-child(2)::before { content: "Who receives it"; }
+  table.data td:nth-child(3)::before { content: "Why"; }
+  table.data td:nth-child(4)::before { content: "Legal basis"; }
+}
