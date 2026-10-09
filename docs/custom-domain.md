@@ -1,5 +1,8 @@
 # Custom domain: scrapshot.munchmethod.com
 
+**Live since 2026-10-09**: DNS CNAME added, custom domain set on the repo, HTTPS enforced.
+The github.io URLs redirect to it.
+
 1. DNS (at munchmethod.com's DNS provider) - one record:
 
    | Type | Name / Host | Value / Target | TTL |

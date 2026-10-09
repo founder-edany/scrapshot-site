@@ -7,7 +7,7 @@ APP_STORE_URL = "https://apps.apple.com/app/id<SCRAPSHOT_APP_ID>"   # placeholde
 EMAIL = "support@munchmethod.com"
 CONTROLLER = "Rahul Sagar"
 EFFECTIVE = "9 October 2026"
-SITE = "https://founder-edany.github.io/scrapshot-site"
+SITE = "https://scrapshot.munchmethod.com"   # custom domain (the github.io URLs redirect here)
 
 NAV = [("index.html", "Home"), ("support.html", "Support"), ("privacy.html", "Privacy"), ("terms.html", "Terms")]
 
@@ -24,6 +24,8 @@ def page(file, title, description, body):
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
 <meta property="og:image" content="{SITE}/assets/og.jpg">
+<meta property="og:url" content="{SITE}/{'' if file == 'index.html' else file}">
+<link rel="canonical" href="{SITE}/{'' if file == 'index.html' else file}">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
